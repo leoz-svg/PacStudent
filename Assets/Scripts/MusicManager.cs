@@ -11,13 +11,13 @@ public class MusicManager : MonoBehaviour
     void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.loop = false; //  intro不循环，后续bgm循环
+        audioSource.loop = false; //  Intro does not loop, subsequent bgm loops
 
-        // 先播放intro音乐
+        // Play the intro music first
         audioSource.clip = bgmIntro;
         audioSource.Play();
 
-        // 3秒后或intro结束时，切换到幽灵正常状态的bgm
+        // After 3 seconds or when the intro ends, switch to the ghost's normal bgm
         float delay = Mathf.Min(bgmIntro.length, 3f);
         Invoke("PlayGhostNormalBGM", delay);
     }

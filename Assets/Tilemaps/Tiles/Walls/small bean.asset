@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: small bean
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: a72d0df05b10a73418f7f3d25ec6bf84, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 93fc1f91d7de5094db85996488a45c3c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

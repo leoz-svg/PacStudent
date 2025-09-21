@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Pellet"))
         {
-            moveAudioSource.Stop(); // 碰撞能量豆时停止移动音效
+            moveAudioSource.Stop(); // Stop moving sound effect when colliding with energy beans
             Destroy(other.gameObject);
         }
     }
