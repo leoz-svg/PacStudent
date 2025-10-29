@@ -1151,7 +1151,7 @@ MonoBehaviour:
   moveSpeed: 2.8
   startCornerIndex: 0
   consumePelletsInThisScene: 0
-  moveClip: {fileID: 8300000, guid: dd2a046a9501a304eace25b6c100b26f, type: 3}
+  moveClip: {fileID: 8300000, guid: 0c7a63c4a6d254b468191767ac49c98d, type: 3}
 --- !u!1 &853675189
 GameObject:
   m_ObjectHideFlags: 0
