@@ -5,6 +5,6 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     public void LoadLevel1() => SceneManager.LoadScene("Level1");
-    public void LoadLevel2() => SceneManager.LoadScene("Level2");
-    public void LoadStart() => SceneManager.LoadScene("Start");
+    public void LoadLevel2() => SceneManager.LoadScene("InnovationScene");
+    public void LoadStart() => SceneManager.LoadScene("StartScene");
 }
