@@ -1,0 +1,8 @@
+Unity version: 6000.6.0f1
+Windows x64 development build: SUCCEEDED
+Standalone headless startup: PASSED (engine initialized and process remained running; no exception in startup log)
+Play validation 1280x720: 28 checks, TOTAL_ERRORS=0
+Play validation 1024x768: 28 checks, TOTAL_ERRORS=0
+Map validation: 220 collectibles, 4 power pills, no unreachable collectible, both tunnels reachable
+Visual validation: inspected menu, gameplay HUD and innovation screenshots at both aspect ratios
+

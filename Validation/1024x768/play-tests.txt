@@ -1,0 +1,29 @@
+PASS Start menu loaded
+PASS Menu records and animated border wired
+PASS Level 1 game system exists
+PASS Countdown freezes gameplay and timer; three lives
+PASS Countdown releases gameplay
+PASS One key press continues movement without hold
+PASS Eating pellets awards points
+PASS lastInput remains buffered
+PASS Blocked requested turn preserves current movement
+PASS Wall prevents movement
+PASS Timer displays minutes seconds centiseconds
+PASS Left tunnel wraps to right
+PASS Power pill lasts ten seconds
+PASS Scared collision awards 300 and enters Dead state
+PASS Dead ghost revives only at spawn
+PASS Innovation scene wired to level 2
+PASS Ten pellets charge one pulse
+PASS Pulse consumes energy and scares nearby ghost
+PASS Pulse respects six-cell range
+PASS Death removes one life and freezes round
+PASS Death respawns player awaiting new input
+PASS No lives displays Game Over and blocks buttons
+PASS Game Over returns to menu
+PASS Record saves score then faster time tie-break
+PASS Actual Level 2 button opens innovation scene
+PASS Eating every pellet triggers Game Over
+PASS Actual Level 1 button opens first level
+PASS Actual Exit button returns to menu
+TOTAL_ERRORS=0

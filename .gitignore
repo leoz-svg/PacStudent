@@ -23,3 +23,7 @@ Thumbs.db
 !Assets/
 !Packages/
 !ProjectSettings/
+
+# Local Plastic workspace state; Git is the preserved source history
+.plastic/
+*.slnx
