@@ -1,0 +1,8 @@
+{
+  "food_count": 220,
+  "power_count": 4,
+  "unreachable_food": [],
+  "player_spawn_valid": true,
+  "both_tunnels_reachable": true,
+  "corner_patrol_reachable": true
+}

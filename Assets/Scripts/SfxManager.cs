@@ -41,11 +41,12 @@ public class SfxManager : MonoBehaviour
     }
 
     
-    public void StartMoveLoop()
+    public void StartMoveLoop(bool eating = false)
     {
-        if (!moveLoop) return;
-        if (loopSource.isPlaying && loopSource.clip == moveLoop) return;
-        loopSource.clip = moveLoop;
+        var clip = eating ? pelletEat : moveLoop;
+        if (!clip) return;
+        if (loopSource.isPlaying && loopSource.clip == clip) return;
+        loopSource.clip = clip;
         loopSource.volume = moveVolume;
         loopSource.Play();
     }
