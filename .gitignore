@@ -27,3 +27,4 @@ Thumbs.db
 # Local Plastic workspace state; Git is the preserved source history
 .plastic/
 *.slnx
+.vscode/
