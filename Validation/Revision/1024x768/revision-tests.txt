@@ -1,0 +1,20 @@
+PASS Menu explains hold/release controls
+PASS Short press completes one tile after release
+PASS Released input never starts another tile
+PASS Release stops movement animation and dust
+PASS Longer hold travels farther (four tiles)
+PASS Hold duration distance is frame-rate independent
+PASS Held direction cannot cross wall
+PASS Blocked new direction does not auto-run down old corridor
+PASS Held movement still wraps through tunnel
+PASS All ghosts enter scared state
+PASS Scared ghosts retain four distinct character textures
+PASS Scared ghosts display explicit vulnerability marker
+PASS Last three seconds enter recovering state
+PASS Recovering state has separate marker
+PASS Expired scare returns ghosts to normal
+PASS Eating every pellet displays victory message
+PASS Victory freezes round and blocks input
+PASS Victory returns to menu
+PASS Losing final life still displays Game Over
+TOTAL_ERRORS=0

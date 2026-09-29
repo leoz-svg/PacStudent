@@ -17,6 +17,15 @@ public class GhostController : MonoBehaviour
     int corner;
     static readonly Vector3Int[] Corners = { new Vector3Int(-13,12,0),new Vector3Int(12,12,0),new Vector3Int(12,-13,0),new Vector3Int(-13,-13,0) };
     public float localScared;
+    SpriteRenderer body;
+    TMPro.TMP_Text stateLabel;
+    string originalLabel;
+    void Awake()
+    {
+        body=GetComponent<SpriteRenderer>();
+        stateLabel=GetComponentInChildren<TMPro.TMP_Text>();
+        originalLabel=number.ToString();
+    }
     void Start() { ResetGhost(); }
     public void ResetGhost()
     {
@@ -30,6 +39,19 @@ public class GhostController : MonoBehaviour
     {
         animator.speed=1;
         animator.Play(State==GhostState.Normal ? "MoveBT" : State.ToString());
+    }
+    void LateUpdate()
+    {
+        bool scared=State==GhostState.Scared||State==GhostState.Recovering;
+        // Keep each ghost's own silhouette; cyan tint and an explicit marker
+        // communicate vulnerability, with rapid flashing during recovery.
+        float alpha=State==GhostState.Recovering ? (Mathf.Sin(Time.time*18)>0?.35f:1f) : 1f;
+        if(body) body.color=scared ? new Color(.55f,1f,1f,alpha) : Color.white;
+        if(stateLabel)
+        {
+            stateLabel.text=originalLabel+(State==GhostState.Scared?" !":State==GhostState.Recovering?" !!":State==GhostState.Dead?" x":"");
+            stateLabel.color=scared?Color.cyan:Color.white;
+        }
     }
     void Update()
     {

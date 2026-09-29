@@ -58,7 +58,7 @@ public class GameSystem : MonoBehaviour
   AddScore(power?50:10); remaining--;
   if(power) { StartScared(); SfxManager.I?.PlayCherry(); }
   if(levelIndex==2) { Energy=Mathf.Min(100,Energy+(power?25:5)); UpdateAbility(); }
-  if(remaining<=0) StartCoroutine(GameOver());
+  if(remaining<=0) StartCoroutine(EndRound(true));
  }
  public void AddScore(int value) { score+=value; hud.SetScore(score); }
  public void StartScared() { AddScare(10); }
@@ -68,15 +68,18 @@ public class GameSystem : MonoBehaviour
  {
   Playing=false; lives=Mathf.Max(0,lives-1); hud.SetLives(lives); player.Die(); SfxManager.I?.PlayPacDeath();
   yield return new WaitForSeconds(1.6f);
-  if(lives==0) { yield return GameOver(); yield break; }
+  if(lives==0) { yield return EndRound(false); yield break; }
   ScareTimer=0; hud.SetScaredTime(0); player.ResetPlayer();
   foreach(var ghost in ghosts) ghost.ResetGhost();
   cherry.Clear(); Playing=true;
  }
- IEnumerator GameOver()
+ IEnumerator EndRound(bool completed)
  {
   if(ending) yield break; ending=true; Playing=false; exitButton.interactable=false;
-  player.animator.speed=0; SfxManager.I?.StopMoveLoop(); blockingPanel.SetActive(true); message.text="GAME OVER";
+  player.animator.speed=0; SfxManager.I?.StopMoveLoop(); blockingPanel.SetActive(true);
+  message.text=completed ? "GAME COMPLETE!\n<size=48>CONGRATULATIONS!</size>" : "GAME OVER";
+  message.fontSize=completed ? 76 : 100;
+  message.color=completed ? new Color(.4f,1f,.75f) : Color.white;
   SaveRecord(levelIndex,score,runTime);
   yield return new WaitForSeconds(3); SceneManager.LoadScene("StartScene");
  }
