@@ -14,7 +14,7 @@
 
 Windows 下载版：
 
-1. 打开仓库的 [Releases 发布页面](https://github.com/Leozh308/Pacstudent_Assess3/releases/latest)。
+1. 打开仓库的 [Releases 发布页面](https://github.com/leoz-svg/PacStudent/releases/latest)。
 2. 在附件中下载 `PacStudent-Windows.zip`，完整解压到一个文件夹。
 3. 双击 `PacStudent.exe` 启动。保留同目录的 `PacStudent_Data`、`UnityPlayer.dll` 等所有文件，不要只复制 exe。
 4. 在主菜单点击 Level 1 或 Level 2。

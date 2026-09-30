@@ -2,11 +2,13 @@
 
 一款使用 Unity 制作的 2D 迷宫吃豆游戏。清空地图中的豆子、躲避四只行为不同的幽灵，并在第二关利用能量脉冲创造逃生和得分机会。
 
-本仓库沿用原来的 `Pacstudent_Assess3` 名称，当前版本已更新到 Assessment 4，并包含按住移动、可区分的受惊幽灵和独立通关提示。
+本项目由原来的 Pacstudent_Assess3 继续开发，当前版本已更新到 Assessment 4，并包含按住移动、可区分的受惊幽灵和独立通关提示。
 
 ## 下载与玩法
 
-- **[下载 Windows 游戏](https://github.com/Leozh308/Pacstudent_Assess3/releases/latest)**：进入发布页，下载 `PacStudent-Windows.zip`，完整解压后运行 `PacStudent.exe`。无需安装 Unity。
+- **[点击在线试玩](https://leoz-svg.github.io/PacStudent/)**：使用带键盘的电脑打开，点击加载游戏即可体验。
+
+- **[下载 Windows 游戏](https://github.com/leoz-svg/PacStudent/releases/latest)**：进入发布页，下载 `PacStudent-Windows.zip`，完整解压后运行 `PacStudent.exe`。无需安装 Unity。
 - **[详细游戏玩法说明](docs/GAMEPLAY.zh-CN.md)**：包含操作、计分、幽灵行为、关卡机制和常见问题。
 - **[源码和实现说明](README_COMPLETION.md)**：适合在 Unity 中打开和继续开发。
 
