@@ -12,4 +12,4 @@
 
 此前两种分辨率的移动、受惊和胜负逻辑检查见 `Revision/`。本记录不将这些编辑器测试描述为浏览器端的完整测试。
 
-线上部署验证将在发布完成后补充。
+线上验证：GitHub Pages 部署成功，https://leoz-svg.github.io/PacStudent/ 返回 HTTP 200；线上四个 Build 文件全部返回 200，SHA256 与本地一致。已在浏览器点击加载，确认正式网址显示 Unity 主菜单。公开 Release v1.0.0 的 Windows 包、网页包、源码备份和玩法说明均上传完成，远端 SHA256 与本地一致。
