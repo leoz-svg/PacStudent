@@ -39,6 +39,6 @@ Windows 独立版本：D:\Codex\2026-09-29\qi\outputs\PacStudent-Windows\PacStud
 本次根据你的反馈，将 PDF 中的持续行走规则改为按住移动，并区分通关与失败的结算文字。
 
 PDF 要求使用课程指定 Unity 版本；原项目为 2023.2.10f1，现在按你的选择升级为 6000.6.0f1。最终提交版本请与课程要求核对。
-保留了原有 .git 历史和远端配置，没有向远端推送，也没有替你提交 Canvas。
+保留了原有 .git 历史和远端配置。GitHub 发布与网页访问入口见 README.md；不包含向课程 Canvas 提交。
 PDF 提到的正式 Declaration 模板没有随文件提供；请用课程原始模板如实填写。新增实现有 AI 辅助，请自行理解、检查并如实说明协助情况。
 不包含 Library、Temp、Logs 等自动生成目录的项目压缩包适合备份与传递；打开项目时 Unity 会重新生成 Library。
