@@ -18,6 +18,12 @@
 
 以下截图来自 Unity Play Mode 的自动验证。
 
+### 音乐设置（v1.1.0）
+
+主菜单右上角 SETTINGS 可开关音乐并实时调节 0%～100% 音量，DONE / Esc 关闭后保存，两个关卡统一生效。游戏音效独立保留。新主旋律为 HydroGene 的 **8-bit MonsterVania #1**；[来源与 CC0 许可](THIRD_PARTY_NOTICES.md)。
+
+![音乐设置](Validation/Music/1280x720/settings.png)
+
 ### 四种受惊幽灵
 
 幽灵保留各自外形，编号旁的 `!` 表示可以捕捉；恢复阶段显示 `!!` 并闪烁。

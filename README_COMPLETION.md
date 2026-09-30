@@ -13,6 +13,7 @@ Windows 独立版本：D:\Codex\2026-09-29\qi\outputs\PacStudent-Windows\PacStud
 - Level 2：能量脉冲关卡。普通豆增加 5 能量、能量豆增加 25，能量最多 100。
 - 第二关按空格：消耗 50 能量，让 6 格范围内的非死亡幽灵受惊 5 秒。
 - EXIT：回到主菜单。
+- 主菜单 SETTINGS：音乐 ON/OFF 和 0%～100% 音量；DONE 或 Esc 关闭并保存。只控制音乐，不改变游戏音效。新主旋律为 HydroGene 的 8-bit MonsterVania #1（CC0），详见 THIRD_PARTY_NOTICES.md。
 
 ## 已实现的游戏流程
 

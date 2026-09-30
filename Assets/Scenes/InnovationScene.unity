@@ -30259,7 +30259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgmIntro: {fileID: 8300000, guid: dd2a046a9501a304eace25b6c100b26f, type: 3}
-  bgmGhostNormal: {fileID: 8300000, guid: e538c2530f6a5bb4f98a05e13aa686e8, type: 3}
+  bgmGhostNormal: {fileID: 8300000, guid: a97cc9cac394f494196a041ce2668a48, type: 3}
   bgmGhostScared: {fileID: 8300000, guid: 69750adbbf04ec64882cb4d0157b0735, type: 3}
   bgmGhostDead: {fileID: 8300000, guid: e5650ba58ee6dbf4fa1969531d91f2e9, type: 3}
 --- !u!4 &2122670993

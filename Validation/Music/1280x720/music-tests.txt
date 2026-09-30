@@ -1,0 +1,22 @@
+PASS Settings starts closed
+PASS New menu music loops
+PASS Settings opens with current volume
+PASS Settings blocks level selection behind modal
+PASS Default music volume applies
+PASS Slider artwork remains within track and handle bounds
+PASS Slider zero silences music
+PASS Slider maximum applies
+PASS Toggle mutes menu music immediately
+PASS Mute preserves playback rather than restarting loop
+PASS Music control does not mute audio listener
+PASS Done closes settings and restores level buttons
+PASS Settings saved to PlayerPrefs
+PASS Level 1 intro inherits mute and volume
+PASS Level 1 normal music replaced and muted
+PASS Scared music respects mute
+PASS Returning ghost music respects mute
+PASS Gameplay sound effects remain unmuted
+PASS Level 2 inherits music preferences and replacement
+PASS Returning to menu restores saved controls
+PASS Re-enabling music restores chosen volume
+TOTAL_ERRORS=0
