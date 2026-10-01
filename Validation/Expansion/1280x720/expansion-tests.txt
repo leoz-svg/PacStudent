@@ -1,0 +1,43 @@
+PASS New scene starts with both overlays closed
+PASS Every new-map pellet reachable from spawn
+PASS Player cannot enter ghost house
+PASS Both wrap tunnel entrances connected
+PASS Corner PAUSE button freezes play and opens modal
+PASS Pause freezes game, hunt and combo timers
+PASS Pause freezes player and ghost motion
+PASS Pulse cannot be spent while paused
+PASS Paused music controls apply immediately
+PASS Title remains on screen
+PASS Hint remains on screen
+PASS Label remains on screen
+PASS Label remains on screen
+PASS Label remains on screen
+PASS MusicState remains on screen
+PASS Volume remains on screen
+PASS MusicHint remains on screen
+PASS RestartHint remains on screen
+PASS Resume closes overlay and restores clock
+PASS Game clock advances after resume
+PASS Restart clears run state and rebuilds full map
+PASS Music preference persists across restart
+PASS Pulse summary counts successful cast and targets
+PASS Clearing every pellet opens victory results
+PASS Results show collected food and peak combo
+PASS Title remains on screen
+PASS Subtitle remains on screen
+PASS ScoreLabel remains on screen
+PASS TimeLabel remains on screen
+PASS Score remains on screen
+PASS Time remains on screen
+PASS Stats remains on screen
+PASS Record remains on screen
+PASS Label remains on screen
+PASS Label remains on screen
+PASS Results remain visible until player chooses
+PASS Escape cannot resume a finished round
+PASS Results main menu restores normal time scale
+PASS Classic map and mechanics retained
+PASS Classic mode also supports pause
+PASS Final death opens defeat results
+PASS Results Play Again starts a fresh playable round
+TOTAL_ERRORS=0

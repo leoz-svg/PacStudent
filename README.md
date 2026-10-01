@@ -14,11 +14,21 @@
 
 提供 Windows 64 位下载版和 WebGL 浏览器版。网页发布文件位于 docs/，需要通过 HTTP/HTTPS 访问；不要双击 HTML 直接打开。
 
-## 第二关：能量追猎（v1.2.0）
+## v1.3.0：独立地图、暂停与结算
+
+第二关换为双环迷宫：安全绕行与中央危险捷径相结合，235 颗豆子全部可达。两关支持 Esc / PAUSE 暂停、调音乐和重开；通关或失败后展示本局统计，等待选择再来一局或返回菜单。[更新详情](docs/EXPANSION_v1.3.md)。
+
+![独立地图](Validation/Expansion/1280x720/map.png)
+
+![暂停菜单](Validation/Expansion/1280x720/pause.png)
+
+![新版结算页](Validation/Expansion/1280x720/victory.png)
+
+## 第二关：能量追猎
 
 连续收豆提升至 ×2 / ×3 得分，每 30 秒经历收集、预警和集中追猎。50 能量可用于应急脉冲，攒满 100 则释放范围更大的强化脉冲。界面显示波次、连击、剩余豆子及冷却；第一关继续保留经典玩法。[第二关详细说明](docs/LEVEL2_ENERGY_HUNT.md)。
 
-![能量追猎界面](Validation/Hunt/1280x720/hunt.png)
+
 
 ## 最新版实机画面
 
@@ -40,13 +50,13 @@
 
 收集完全部普通豆与能量豆后，显示 GAME COMPLETE! / CONGRATULATIONS!。
 
-![通关界面](Validation/Revision/1280x720/game-complete.png)
+![通关界面](Validation/Expansion/1280x720/victory.png)
 
 ### 失败
 
 生命耗尽时显示 GAME OVER。
 
-![失败界面](Validation/Revision/1024x768/game-over.png)
+![失败界面](Validation/Expansion/1024x768/defeat.png)
 
 ## 快速操作
 
@@ -55,7 +65,8 @@
 | 移动 | 按住 WASD 或方向键 |
 | 停下 | 松开方向键，走完当前一格后停止 |
 | 第二关能量脉冲 | 空格：50 能量普通脉冲；满 100 能量强化脉冲 |
-| 返回菜单 | 点击 EXIT |
+| 暂停 / 继续 | Esc / PAUSE |
+| 返回菜单 / 重开 | 暂停菜单内选择 |
 
 每局初始 3 条生命。普通豆 10 分、能量豆 50 分、樱桃 100 分、捕捉受惊幽灵 300 分。两个关卡各自保存本机最高分及对应时间。
 

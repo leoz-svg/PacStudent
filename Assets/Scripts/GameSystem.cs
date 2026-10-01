@@ -18,6 +18,13 @@ public class GameSystem : MonoBehaviour
  public TextMeshProUGUI message,abilityText;
  public UnityEngine.UI.Button exitButton;
  public ParticleSystem pulse;
+ public GameplayPanels panels;
+ public bool Paused {get;private set;}
+ public int BestStreak {get;private set;}
+ public int GhostsCaught {get;private set;}
+ public int PulsesUsed {get;private set;}
+ public int PulseHits {get;private set;}
+ public int FoodEaten {get;private set;}
  public bool Playing {get;private set;}
  public float ScareTimer {get;private set;}
  public bool IsScared=>ScareTimer>0;
@@ -28,7 +35,7 @@ public class GameSystem : MonoBehaviour
  public int Remaining => remaining;
  int remaining; bool ending;
  void Awake() { I=this; }
- void OnDestroy() { if(I==this) I=null; }
+ void OnDestroy() { if(I==this) { I=null; Time.timeScale=1; } }
  IEnumerator Start()
  {
   score=0; lives=startLives; runTime=0; remaining=level.CountFood();
@@ -40,6 +47,7 @@ public class GameSystem : MonoBehaviour
  }
  void Update()
  {
+  if(Input.GetKeyDown(KeyCode.Escape)) TogglePause();
   if(!Playing) return;
   runTime+=Time.deltaTime; ScareTimer=Mathf.Max(0,ScareTimer-Time.deltaTime);
   if(Hunt!=null)
@@ -55,7 +63,7 @@ public class GameSystem : MonoBehaviour
    dead|=g.State==GhostController.GhostState.Dead;
    scared|=g.State==GhostController.GhostState.Scared||g.State==GhostController.GhostState.Recovering;
    if(Vector3.Distance(g.transform.position,player.transform.position)>.7f || g.State==GhostController.GhostState.Dead) continue;
-   if(IsScared||g.localScared>0||g.State!=GhostController.GhostState.Normal) { g.Kill(); AddScore(300); SfxManager.I?.PlayCherry(); }
+   if(IsScared||g.localScared>0||g.State!=GhostController.GhostState.Normal) { g.Kill(); GhostsCaught++; AddScore(300); SfxManager.I?.PlayCherry(); }
    else { LoseLife(); break; }
   }
   music.SetMood(dead,scared);
@@ -67,6 +75,7 @@ public class GameSystem : MonoBehaviour
   if(!power&&!pellet) return;
   level.powerPellets.SetTile(cell,null); level.pellets.SetTile(cell,null);
   AddScore(Hunt!=null?Hunt.Collect(power):(power?50:10)); remaining--;
+  FoodEaten++; if(Hunt!=null) BestStreak=Mathf.Max(BestStreak,Hunt.Streak);
   if(power) { StartScared(); SfxManager.I?.PlayCherry(); }
   if(Hunt!=null) UpdateAbility();
   if(remaining<=0) StartCoroutine(EndRound(true));
@@ -87,13 +96,23 @@ public class GameSystem : MonoBehaviour
  IEnumerator EndRound(bool completed)
  {
   if(ending) yield break; ending=true; Playing=false; exitButton.interactable=false;
-  player.animator.speed=0; SfxManager.I?.StopMoveLoop(); blockingPanel.SetActive(true);
-  message.text=completed ? "GAME COMPLETE!\n<size=48>CONGRATULATIONS!</size>" : "GAME OVER";
-  message.fontSize=completed ? 76 : 100;
-  message.color=completed ? new Color(.4f,1f,.75f) : Color.white;
+  Paused=false; Time.timeScale=0;
+  player.animator.speed=0; SfxManager.I?.StopMoveLoop(); blockingPanel.SetActive(false);
+  string key="PacStudent.Level"+levelIndex;
+  bool record=score>0 && (score>PlayerPrefs.GetInt(key+".Score",0) || score==PlayerPrefs.GetInt(key+".Score",0)&&runTime<PlayerPrefs.GetFloat(key+".Time",float.MaxValue));
   SaveRecord(levelIndex,score,runTime);
-  yield return new WaitForSeconds(3); SceneManager.LoadScene("StartScene");
+  panels.ShowResults(this,completed,record);
+  yield break;
  }
+ public void TogglePause()
+ {
+  if(ending||(!Playing&&!Paused)||!panels) return;
+  Paused=!Paused; Playing=!Paused; Time.timeScale=Paused?0:1;
+  if(Paused) { SfxManager.I?.StopMoveLoop(); player.animator.speed=0; }
+  panels.ShowPause(Paused);
+ }
+ public void RestartRound() { Time.timeScale=1; Paused=false; Playing=false; MusicSettings.Save(); SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
+ public void ReturnToMenu() { Time.timeScale=1; Paused=false; Playing=false; MusicSettings.Save(); SceneManager.LoadScene("StartScene"); }
  public static void SaveRecord(int level,int value,float time)
  {
   string key="PacStudent.Level"+level;
@@ -111,6 +130,7 @@ public class GameSystem : MonoBehaviour
   }
   float radius=super?10:6; int hits=0;
   foreach(var ghost in ghosts) if(ghost.State!=GhostController.GhostState.Dead && Vector3.Distance(ghost.transform.position,player.transform.position)<=radius) { ghost.Scare(super?7:5); hits++; }
+  PulsesUsed++; PulseHits+=hits;
   if(pulse) { pulse.transform.position=player.transform.position; pulse.transform.localScale=Vector3.one*(super?1.67f:1); pulse.Play(); }
   if(huntHud) huntHud.Notify((super?"SUPER PULSE!":"PULSE!")+"\n"+hits+" GHOSTS HIT",super?new Color(1,.8f,.3f):Color.cyan);
   SfxManager.I?.PlayCherry(); UpdateAbility();

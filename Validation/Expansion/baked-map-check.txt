@@ -1,0 +1,1 @@
+PASS All 235 food tiles reachable; ghost house excluded; four patrol corners and tunnels connected. Walkable=238

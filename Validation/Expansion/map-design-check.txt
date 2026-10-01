@@ -1,0 +1,11 @@
+PASS All designed corridors connected to player spawn
+PASS Map stays within camera and tunnel bounds
+PASS No corridor intersects ghost house
+PASS Every corridor has an escape route; no dead ends including wrap
+PASS All four power pellets lie on reachable routes
+PASS All original ghost patrol corners retained
+PASS Multiple independent routing loops exist
+PASS Both house exits meet traversable cross-corridors
+CORRIDOR_CELLS=238
+FOOD_TILES=235
+INDEPENDENT_LOOPS=16
