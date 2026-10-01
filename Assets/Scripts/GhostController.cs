@@ -49,8 +49,9 @@ public class GhostController : MonoBehaviour
         if(body) body.color=scared ? new Color(.55f,1f,1f,alpha) : Color.white;
         if(stateLabel)
         {
-            stateLabel.text=originalLabel+(State==GhostState.Scared?" !":State==GhostState.Recovering?" !!":State==GhostState.Dead?" x":"");
-            stateLabel.color=scared?Color.cyan:Color.white;
+            bool hunting=State==GhostState.Normal&&GameSystem.I&&GameSystem.I.HuntActive;
+            stateLabel.text=originalLabel+(State==GhostState.Scared?" !":State==GhostState.Recovering?" !!":State==GhostState.Dead?" x":hunting?" >":"");
+            stateLabel.color=scared?Color.cyan:hunting?new Color(1,.35f,.45f):Color.white;
         }
     }
     void Update()
@@ -65,7 +66,7 @@ public class GhostController : MonoBehaviour
             return;
         }
         var desired=DesiredState(); if(State!=desired) { State=desired; ApplyState(); }
-        float budget=Time.deltaTime*player.cellsPerSecond*(State==GhostState.Normal?.9f:.45f);
+        float budget=Time.deltaTime*player.cellsPerSecond*(State==GhostState.Normal?(GameSystem.I.HuntActive?.98f:.9f):.45f);
         for(int guard=0;guard<32;guard++)
         {
             if(!moving)
@@ -100,6 +101,13 @@ public class GhostController : MonoBehaviour
         foreach(var d in LevelGenerator.Directions) if(level.CanStep(c,d,true,false)) options.Add(d);
         if(options.Count>1) options.Remove(-direction);
         if(options.Count==0) return Vector3Int.zero;
+        if(State==GhostState.Normal && GameSystem.I.HuntActive)
+        {
+            var distances=Distances(level.Cell(player.transform.position));
+            int nearest=int.MaxValue; var chase=options[0];
+            foreach(var d in options) if(distances.TryGetValue(c+d,out int distance)&&distance<nearest) { nearest=distance; chase=d; }
+            return chase;
+        }
         if(State==GhostState.Normal && number==4)
         {
             // Visit the four outside corners clockwise. A small grid search handles

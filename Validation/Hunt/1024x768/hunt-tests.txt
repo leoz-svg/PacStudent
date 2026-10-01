@@ -1,0 +1,19 @@
+PASS Level two starts with wired hunt HUD
+PASS Actual pellet consumption applies combo and energy
+PASS Already eaten tile gives no repeated score or energy
+PASS Super pulse radius, duration, and dead-ghost exclusion
+PASS Real pulse input respects cooldown
+PASS Regular pulse keeps smaller six-cell radius
+PASS Visible three-second warning before chase
+PASS Hunt phase activates chase and HUD
+PASS Normally evasive ghost pursues player during hunt
+PASS Wave stays on screen
+PASS Combo stays on screen
+PASS Food stays on screen
+PASS Notice stays on screen
+PASS PulseInstructions stays on screen
+PASS Death breaks chain and restarts safe collection, retaining energy
+PASS Respawn restores playable state
+PASS Classic level has no hunt mechanics
+PASS Classic pellet score and pulse behaviour unchanged
+TOTAL_ERRORS=0

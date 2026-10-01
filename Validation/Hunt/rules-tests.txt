@@ -1,0 +1,28 @@
+PASS Fresh round state
+PASS Insufficient energy never spends
+PASS Normal pellet before threshold 0
+PASS Normal pellet before threshold 1
+PASS Normal pellet before threshold 2
+PASS Normal pellet before threshold 3
+PASS Normal pellet before threshold 4
+PASS Normal pellet before threshold 5
+PASS Normal pellet before threshold 6
+PASS Normal pellet before threshold 7
+PASS Normal pellet before threshold 8
+PASS Tenth pellet activates x2
+PASS Regular pulse costs exactly 50
+PASS Cooldown prevents spending at full energy
+PASS Idle breaks combo
+PASS Full energy selects super pulse
+PASS Twenty fifth pellet activates x3
+PASS Power pellet receives multiplier and energy caps
+PASS Combo survives before deadline
+PASS Combo expires after deadline
+PASS Full collection window
+PASS Warning precedes hunt
+PASS Hunt follows warning
+PASS Wave cycles back to collection
+PASS Long frame preserves wave cycle
+PASS Death preserves energy and resets pressure
+PASS Wave timing independent of frame rate
+CHECKS=27 FAILURES=0
