@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// Attach only to music sources, keeping gameplay sound effects independent.
+// Music mix trim only. MusicSettings controls the master listener for every sound.
 [RequireComponent(typeof(AudioSource))]
 [DisallowMultipleComponent]
 public class MusicVolumeBinding : MonoBehaviour
@@ -12,8 +12,8 @@ public class MusicVolumeBinding : MonoBehaviour
     void Apply()
     {
         if (!source) source = GetComponent<AudioSource>();
-        source.mute = !MusicSettings.Enabled;
-        source.volume = .6f * MusicSettings.Volume;
+        source.mute = false;
+        source.volume = .6f;
     }
     void OnApplicationPause(bool paused) { if (paused) MusicSettings.Save(); }
     void OnApplicationQuit() { MusicSettings.Save(); }

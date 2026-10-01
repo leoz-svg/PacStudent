@@ -1,0 +1,18 @@
+PASS Two music channels, no accumulated sources
+PASS New intro plays during countdown
+PASS Master mute covers intro and one-shot effects
+PASS Changing volume while disabled stays silent
+PASS Re-enable restores chosen global volume
+PASS Pause available
+PASS Master volume applies during pause
+PASS Scared entry crossfades both tracks while paused
+PASS Scared arrangement reaches full mix
+PASS Return to normal completes without extra channels
+PASS Rapid interrupted mood changes settle correctly
+PASS Repeated mood updates do not restart playback
+PASS Loop variations share musical length
+PASS Zero silences all output
+PASS Mute persists across scenes
+PASS Menu controls set master output
+PASS Menu uses matching theme
+TOTAL_ERRORS=0

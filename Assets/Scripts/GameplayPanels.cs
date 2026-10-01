@@ -26,7 +26,7 @@ public class GameplayPanels : MonoBehaviour
     {
         musicToggle.SetIsOnWithoutNotify(MusicSettings.Enabled); musicSlider.SetValueWithoutNotify(MusicSettings.Volume);
         if(musicToggle.graphic) musicToggle.graphic.enabled=MusicSettings.Enabled;
-        musicState.text=MusicSettings.Enabled?"MUSIC ON":"MUSIC OFF";
+        musicState.text=MusicSettings.Enabled?"SOUND ON":"SOUND OFF";
         volumeText.text=Mathf.RoundToInt(MusicSettings.Volume*100)+"%";
     }
     public void ShowPause(bool show)

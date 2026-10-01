@@ -627,7 +627,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MUSIC SETTINGS SAVE WHEN YOU LEAVE THIS PANEL
+  m_text: SOUND SETTINGS SAVE WHEN YOU LEAVE THIS PANEL
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -42860,7 +42860,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MUSIC ON
+  m_text: SOUND ON
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -45065,10 +45065,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 596d0b8f2b1cea8498105204cbfd5b40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmIntro: {fileID: 8300000, guid: dd2a046a9501a304eace25b6c100b26f, type: 3}
-  bgmGhostNormal: {fileID: 8300000, guid: a97cc9cac394f494196a041ce2668a48, type: 3}
-  bgmGhostScared: {fileID: 8300000, guid: 69750adbbf04ec64882cb4d0157b0735, type: 3}
-  bgmGhostDead: {fileID: 8300000, guid: e5650ba58ee6dbf4fa1969531d91f2e9, type: 3}
+  bgmIntro: {fileID: 8300000, guid: 147eef343afe07e4187ef9c6e1708b94, type: 3}
+  bgmGhostNormal: {fileID: 8300000, guid: 663d15848823f2f44a1084fa3af398ae, type: 3}
+  bgmGhostScared: {fileID: 8300000, guid: e99a626c7e3b7014a9368aebd60c45fd, type: 3}
+  bgmGhostDead: {fileID: 8300000, guid: 57a6ccfacb14cc9408c19f032037ecd0, type: 3}
 --- !u!4 &2122670993
 Transform:
   m_ObjectHideFlags: 0

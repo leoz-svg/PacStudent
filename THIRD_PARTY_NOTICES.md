@@ -14,3 +14,7 @@
 Source and license checked on 2026-09-30. The author describes the track as seamlessly loopable and says attribution is not mandatory; credit is retained here and in the settings screen.
 
 Other sprites, audio clips and assets were supplied in the original project. This notice covers the newly added music only and does not relicense the original project's assets.
+
+## Neon Maze (v1.3.1)
+
+Original procedural chiptune created for this project. No external samples. Files: Assets/AudioClips/Music/NeonMaze/{Intro,Normal,Scared,Returning}.wav. Shared tempo 120 BPM and 16-second loop structure; intro includes an overlap tail. This suite now replaces active music in the menu and gameplay; MonsterVania is retained as an unused historical asset.

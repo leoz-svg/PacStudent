@@ -34,11 +34,9 @@
 
 以下截图来自 Unity Play Mode 的自动验证。
 
-### 音乐设置（v1.1.0）
+### 全局声音与连贯音乐（v1.3.1）
 
-主菜单右上角 SETTINGS 可开关音乐并实时调节 0%～100% 音量，DONE / Esc 关闭后保存，两个关卡统一生效。游戏音效独立保留。新主旋律为 HydroGene 的 **8-bit MonsterVania #1**；[来源与 CC0 许可](THIRD_PARTY_NOTICES.md)。
-
-![音乐设置](Validation/Music/1280x720/settings.png)
+SETTINGS 和暂停菜单现在统一控制全部音乐与音效，开关和音量会保存。Neon Maze 主题包含开局、常态、惊吓和返回变奏，状态切换保持音乐位置并淡入淡出。
 
 ### 四种受惊幽灵
 
@@ -80,6 +78,9 @@
 `Library` 等缓存不随仓库发布，首次打开时会自动生成。原始项目使用 2023.2.10f1；当前版本按项目所有者的选择升级到 Unity 6.6。
 
 ## 验证记录
+
+v1.3.1 音频更新通过 17 项专项检查：[音频报告](Validation/Audio/audio-tests.txt)。此前地图与流程测试见 [v1.3 记录](Validation/Expansion/README.md)。
+
 
 本次三项反馈修改在 1280×720、1024×768 下各通过 19 项检查，报告均为 `TOTAL_ERRORS=0`。覆盖移动逻辑、受惊状态和胜负结算；移动测试直接调用逻辑，不模拟物理键盘输入。Windows 64 位构建成功，并完成无图形启动检查。
 
