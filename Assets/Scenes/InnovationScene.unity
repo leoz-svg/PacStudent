@@ -22492,11 +22492,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0ce039bc745a540902b78c08736326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveLoop: {fileID: 8300000, guid: 4f544c0a1bb07f740b00a1e412ee255f, type: 3}
-  hitWall: {fileID: 8300000, guid: bf5df3e6a2d10ac4f8d97b2af75db6b5, type: 3}
-  pelletEat: {fileID: 8300000, guid: 857f1c57cd5622645bd41e1c6dd9241c, type: 3}
-  cherryEat: {fileID: 8300000, guid: 90b78cf5f644235478e0042e13591368, type: 3}
-  pacDeath: {fileID: 8300000, guid: 707ca3c4c3251f24ab2eadaf818637de, type: 3}
+  moveLoop: {fileID: 0}
+  hitWall: {fileID: 8300000, guid: c7b777b9384fbae45a420fb128297763, type: 3}
+  pelletEat: {fileID: 8300000, guid: 1177b6f95e7f07649821eec5f4b2e795, type: 3}
+  cherryEat: {fileID: 8300000, guid: 28b43b58b46550a4984ccda399c55c14, type: 3}
+  pacDeath: {fileID: 8300000, guid: ff2c535e46e14c9459ec39e05e93b773, type: 3}
   moveVolume: 0.35
   hitVolume: 0.8
   eatVolume: 0.7

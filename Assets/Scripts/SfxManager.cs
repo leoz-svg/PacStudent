@@ -21,6 +21,7 @@ public class SfxManager : MonoBehaviour
     [Range(0, 1)] public float deathVolume = 0.9f;
 
     AudioSource loopSource;    
+    AudioSource pelletSource;
     AudioSource oneShot;       
 
     void Awake()
@@ -34,6 +35,9 @@ public class SfxManager : MonoBehaviour
         loopSource.spatialBlend = 0f; // 2D
         loopSource.playOnAwake = false;
 
+        pelletSource = gameObject.AddComponent<AudioSource>();
+        pelletSource.playOnAwake = false;
+        pelletSource.spatialBlend = 0f;
         oneShot = gameObject.AddComponent<AudioSource>();
         oneShot.loop = false;
         oneShot.spatialBlend = 0f; // 2D
@@ -65,7 +69,10 @@ public class SfxManager : MonoBehaviour
     public void PlayPellet()
     {
         if (!pelletEat) return;
-        oneShot.PlayOneShot(pelletEat, eatVolume);
+        // Retrigger one dedicated voice; fast collection never stacks many copies.
+        pelletSource.clip = pelletEat;
+        pelletSource.volume = eatVolume * .45f;
+        pelletSource.Play();
     }
 
 

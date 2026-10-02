@@ -1,0 +1,4 @@
+PASS Death.wav: peak 0.185, zero-ended envelope, no clipping
+PASS Pellet.wav: peak 0.185, zero-ended envelope, no clipping
+PASS Power.wav: peak 0.185, zero-ended envelope, no clipping
+PASS Wall.wav: peak 0.185, zero-ended envelope, no clipping

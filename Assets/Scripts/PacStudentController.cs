@@ -78,7 +78,7 @@ public class PacStudentController : MonoBehaviour
                 }
                 currentInput=d; bumped=false; start=transform.position; target=level.Center(c+d); progress=0; moving=true;
                 Face(d); animator.speed=1; if(dust && !dust.isPlaying) dust.Play();
-                SfxManager.I?.StartMoveLoop(level.pellets.HasTile(c+d)||level.powerPellets.HasTile(c+d));
+                // Movement itself is silent; collecting a pellet produces one short cue.
             }
             float used=Mathf.Min(1-progress,budget); progress+=used; budget-=used;
             transform.position=Vector3.Lerp(start,target,progress);

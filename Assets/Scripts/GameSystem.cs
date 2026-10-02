@@ -77,6 +77,7 @@ public class GameSystem : MonoBehaviour
   AddScore(Hunt!=null?Hunt.Collect(power):(power?50:10)); remaining--;
   FoodEaten++; if(Hunt!=null) BestStreak=Mathf.Max(BestStreak,Hunt.Streak);
   if(power) { StartScared(); SfxManager.I?.PlayCherry(); }
+  else SfxManager.I?.PlayPellet();
   if(Hunt!=null) UpdateAbility();
   if(remaining<=0) StartCoroutine(EndRound(true));
  }

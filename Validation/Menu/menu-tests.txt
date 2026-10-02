@@ -1,0 +1,15 @@
+PASS Home opens without level cards
+PASS Settings blocks start button
+PASS Start opens level selection
+PASS Level button reachable on selection page
+PASS Back returns home
+PASS Selecting Level 1 starts playable game
+PASS No long movement loop assigned
+PASS Pellet cue shorter than one tile step
+PASS No movement or pellet sound at rest
+PASS One dedicated pellet voice
+PASS Rapid pellet cues never stack voices
+PASS Pellet cue finishes without looping
+PASS Returning from game opens home
+PASS Level 2 remains accessible
+TOTAL_ERRORS=0

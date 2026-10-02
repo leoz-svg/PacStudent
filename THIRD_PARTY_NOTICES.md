@@ -18,3 +18,7 @@ Other sprites, audio clips and assets were supplied in the original project. Thi
 ## Neon Maze (v1.3.1)
 
 Original procedural chiptune created for this project. No external samples. Files: Assets/AudioClips/Music/NeonMaze/{Intro,Normal,Scared,Returning}.wav. Shared tempo 120 BPM and 16-second loop structure; intro includes an overlap tail. This suite now replaces active music in the menu and gameplay; MonsterVania is retained as an unused historical asset.
+
+## SoftSfx (v1.4.0)
+
+Original synthesized cues created for this project, without external samples. Pellet, Power, Wall and Death use low-gain sine tones with smooth zero-ended envelopes. Original supplied SFX remain unused historical assets.

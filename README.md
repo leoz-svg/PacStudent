@@ -14,6 +14,14 @@
 
 提供 Windows 64 位下载版和 WebGL 浏览器版。网页发布文件位于 docs/，需要通过 HTTP/HTTPS 访问；不要双击 HTML 直接打开。
 
+## v1.4.0：主菜单与柔和音效
+
+首页 START GAME → 关卡选择，BACK / Esc 返回；主页保留 SETTINGS。移除持续移动/吃豆循环，改为收豆时触发短促音效，避免声部叠加。
+
+![主菜单](Validation/Menu/home.png)
+
+![关卡选择](Validation/Menu/levels.png)
+
 ## v1.3.0：独立地图、暂停与结算
 
 第二关换为双环迷宫：安全绕行与中央危险捷径相结合，235 颗豆子全部可达。两关支持 Esc / PAUSE 暂停、调音乐和重开；通关或失败后展示本局统计，等待选择再来一局或返回菜单。[更新详情](docs/EXPANSION_v1.3.md)。
