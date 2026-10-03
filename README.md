@@ -14,6 +14,14 @@
 
 提供 Windows 64 位下载版和 WebGL 浏览器版。网页发布文件位于 docs/，需要通过 HTTP/HTTPS 访问；不要双击 HTML 直接打开。
 
+## v1.5.0：每局挑战与三星评价
+
+第二关每局抽取 3 项挑战，每项完成奖励 200 分。通关按清图、生存与进阶目标获得最多 3 星，菜单记录两关最好星级。[完整规则](docs/GAMEPLAY.zh-CN.md#v15-每局挑战与三星评价)。
+
+![每局挑战](Validation/Challenges/1280x720/tasks.png)
+
+![三星结算](Validation/Challenges/1280x720/three-stars.png)
+
 ## v1.4.0：主菜单与柔和音效
 
 首页 START GAME → 关卡选择，BACK / Esc 返回；主页保留 SETTINGS。移除持续移动/吃豆循环，改为收豆时触发短促音效，避免声部叠加。

@@ -1,0 +1,57 @@
+PASS 100 seeded runs choose three distinct tasks
+PASS Task pool and combinations vary across runs
+PASS Progress clamps and every reward pays exactly once
+PASS Lower stats cannot revoke earned task progress
+PASS Defeat never earns stars
+PASS Clear alone earns one star
+PASS Survival earns independent second star
+PASS Classic speed star independent of lives
+PASS Classic three-star boundary
+PASS Level two advanced requires all tasks and time limit
+PASS Second level starts with fresh tasks
+PASS Title on screen
+PASS Title text fits
+PASS Rows on screen
+PASS Rows text fits
+PASS Pause freezes time and task progress
+PASS Collection feeds chain and hunt counters
+PASS Single pulse and super pulse metrics update
+PASS Ghost captures feed challenge metrics
+PASS Power pellet task sees all four tiles
+PASS Second charged pulse increments count
+PASS All selected tasks award exactly 600 total points
+PASS Task completion survives loss of life
+PASS Full clear with targets opens three-star results
+PASS Clear does not pay rewards twice
+PASS Best stars saved per level
+PASS Results include task bonus in displayed final score
+PASS Title on screen
+PASS Title text fits
+PASS Subtitle on screen
+PASS Subtitle text fits
+PASS ScoreLabel on screen
+PASS ScoreLabel text fits
+PASS TimeLabel on screen
+PASS TimeLabel text fits
+PASS Score on screen
+PASS Score text fits
+PASS Time on screen
+PASS Time text fits
+PASS Stats on screen
+PASS Stats text fits
+PASS Record on screen
+PASS Record text fits
+PASS Label on screen
+PASS Label text fits
+PASS Label on screen
+PASS Label text fits
+PASS Tasks on screen
+PASS Tasks text fits
+PASS RatingDetails on screen
+PASS RatingDetails text fits
+PASS Level selection shows saved three stars
+PASS New round resets task progress and bonus
+PASS Defeat does not overwrite best stars
+PASS Classic level has no random tasks
+PASS Classic clear earns and displays three stars
+TOTAL_ERRORS=0

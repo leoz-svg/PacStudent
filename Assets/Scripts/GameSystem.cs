@@ -25,6 +25,12 @@ public class GameSystem : MonoBehaviour
  public int PulsesUsed {get;private set;}
  public int PulseHits {get;private set;}
  public int FoodEaten {get;private set;}
+ public int BestPulseHits {get;private set;}
+ public int SuperPulses {get;private set;}
+ public int PowerPellets {get;private set;}
+ public int HuntPellets {get;private set;}
+ public int Stars {get;private set;}
+ public RoundChallenges Challenges {get;private set;}
  public bool Playing {get;private set;}
  public float ScareTimer {get;private set;}
  public bool IsScared=>ScareTimer>0;
@@ -39,7 +45,7 @@ public class GameSystem : MonoBehaviour
  IEnumerator Start()
  {
   score=0; lives=startLives; runTime=0; remaining=level.CountFood();
-  if(levelIndex==2) Hunt=new LevelTwoRules();
+  if(levelIndex==2) { Hunt=new LevelTwoRules(); Challenges=new RoundChallenges(UnityEngine.Random.Range(0,int.MaxValue)); }
   hud.SetLevel(levelIndex); hud.SetScore(0); hud.SetLives(lives); hud.SetTime(0); hud.SetScaredTime(0);
   UpdateAbility(); blockingPanel.SetActive(true); exitButton.interactable=false; music.PlayIntro();
   foreach(var text in new[]{"3","2","1","GO!"}) { message.text=text+(levelIndex==2?"\n<size=24>CHAIN PELLETS  /  CHARGE ENERGY\nSPACE: PULSE  /  100 ENERGY: SUPER PULSE</size>":""); yield return new WaitForSeconds(1); }
@@ -63,7 +69,7 @@ public class GameSystem : MonoBehaviour
    dead|=g.State==GhostController.GhostState.Dead;
    scared|=g.State==GhostController.GhostState.Scared||g.State==GhostController.GhostState.Recovering;
    if(Vector3.Distance(g.transform.position,player.transform.position)>.7f || g.State==GhostController.GhostState.Dead) continue;
-   if(IsScared||g.localScared>0||g.State!=GhostController.GhostState.Normal) { g.Kill(); GhostsCaught++; AddScore(300); SfxManager.I?.PlayCherry(); }
+   if(IsScared||g.localScared>0||g.State!=GhostController.GhostState.Normal) { g.Kill(); GhostsCaught++; AddScore(300); UpdateChallenges(); SfxManager.I?.PlayCherry(); }
    else { LoseLife(); break; }
   }
   music.SetMood(dead,scared);
@@ -75,10 +81,11 @@ public class GameSystem : MonoBehaviour
   if(!power&&!pellet) return;
   level.powerPellets.SetTile(cell,null); level.pellets.SetTile(cell,null);
   AddScore(Hunt!=null?Hunt.Collect(power):(power?50:10)); remaining--;
-  FoodEaten++; if(Hunt!=null) BestStreak=Mathf.Max(BestStreak,Hunt.Streak);
+  FoodEaten++; if(power) PowerPellets++; if(HuntActive) HuntPellets++; if(Hunt!=null) BestStreak=Mathf.Max(BestStreak,Hunt.Streak);
   if(power) { StartScared(); SfxManager.I?.PlayCherry(); }
   else SfxManager.I?.PlayPellet();
   if(Hunt!=null) UpdateAbility();
+  UpdateChallenges();
   if(remaining<=0) StartCoroutine(EndRound(true));
  }
  public void AddScore(int value) { score+=value; hud.SetScore(score); }
@@ -101,6 +108,9 @@ public class GameSystem : MonoBehaviour
   player.animator.speed=0; SfxManager.I?.StopMoveLoop(); blockingPanel.SetActive(false);
   string key="PacStudent.Level"+levelIndex;
   bool record=score>0 && (score>PlayerPrefs.GetInt(key+".Score",0) || score==PlayerPrefs.GetInt(key+".Score",0)&&runTime<PlayerPrefs.GetFloat(key+".Time",float.MaxValue));
+  Stars=RoundRating.Evaluate(completed,levelIndex,lives,runTime,Challenges==null?0:Challenges.CompletedCount);
+  PlayerPrefs.SetInt(RoundRating.Key(levelIndex),Mathf.Max(Stars,PlayerPrefs.GetInt(RoundRating.Key(levelIndex),0)));
+  PlayerPrefs.Save();
   SaveRecord(levelIndex,score,runTime);
   panels.ShowResults(this,completed,record);
   yield break;
@@ -131,10 +141,16 @@ public class GameSystem : MonoBehaviour
   }
   float radius=super?10:6; int hits=0;
   foreach(var ghost in ghosts) if(ghost.State!=GhostController.GhostState.Dead && Vector3.Distance(ghost.transform.position,player.transform.position)<=radius) { ghost.Scare(super?7:5); hits++; }
-  PulsesUsed++; PulseHits+=hits;
+  PulsesUsed++; PulseHits+=hits; BestPulseHits=Mathf.Max(BestPulseHits,hits); if(super) SuperPulses++;
   if(pulse) { pulse.transform.position=player.transform.position; pulse.transform.localScale=Vector3.one*(super?1.67f:1); pulse.Play(); }
   if(huntHud) huntHud.Notify((super?"SUPER PULSE!":"PULSE!")+"\n"+hits+" GHOSTS HIT",super?new Color(1,.8f,.3f):Color.cyan);
-  SfxManager.I?.PlayCherry(); UpdateAbility();
+  SfxManager.I?.PlayCherry(); UpdateAbility(); UpdateChallenges();
+ }
+ void UpdateChallenges()
+ {
+  if(Challenges==null)return;
+  int reward=Challenges.Observe(BestStreak,BestPulseHits,SuperPulses,GhostsCaught,PowerPellets,HuntPellets);
+  if(reward>0){AddScore(reward);if(huntHud)huntHud.Notify("TASK COMPLETE!\n+"+reward+" POINTS",new Color(1,.8f,.3f));}
  }
  void UpdateAbility()
  {
